@@ -15,12 +15,59 @@
             </h1>
         </div>
         <p style="max-width: 700px; margin: 1rem auto 0 auto; color: #fff;">En este espacio compartimos la esencia de nuestra filosofía, los principios que guían nuestro trabajo y las experiencias que nos han permitido crecer como equipo. Aquí no hablamos de personas, sino de ideas, aprendizajes y valores que forman la base de SystemMaker. Creemos en la innovación, la colaboración y la mejora continua como motores fundamentales para crear soluciones que marcan la diferencia. Este blog es un reflejo de nuestro compromiso con la excelencia, la creatividad y el impacto positivo en cada proyecto.</p>
+        <nav style="margin: 2rem 0;">
+            <button class="nav-btn" onclick="showSection('filosofia')">FILOSOFÍA</button>
+            <button class="nav-btn" onclick="showSection('experiencia')">NUESTRA EXPERIENCIA</button>
+            <button class="nav-btn" onclick="showSection('expertise')">NUESTRA EXPERTISE</button>
+            <button class="nav-btn" onclick="showSection('profesiones')">NUESTRAS PROFESIONES DEL EQUIPO</button>
+            <button class="nav-btn" onclick="showSection('contacto')">CONTACTOS</button>
+        </nav>
     </header>
-    <section class="cultura">
-        <h2>Nuestra Filosofía</h2>
-        <p>En SystemMaker, cultivamos una cultura de innovación, colaboración y mejora continua. Nos apasiona trabajar en proyectos, y es esa pasión la que impulsa a nuestra empresa a proponer soluciones nuevas y creativas para los desafíos de empresas, pymes y proyectos actuales. Cada experiencia refleja nuestro compromiso con la calidad, la creatividad y el propósito, guiados siempre por nuestros valores y visión propia.</p>
-        <img src="img/sillionvalley.jpg" alt="Cultura Silicon Valley" class="cultura-img">
-    </section>
+    <main>
+        <section id="filosofia" class="dynamic-section" style="display:block;">
+            <h2>Nuestra Filosofía</h2>
+            <p>En SystemMaker, cultivamos una cultura de innovación, colaboración y mejora continua. Nos apasiona trabajar en proyectos, y es esa pasión la que impulsa a nuestra empresa a proponer soluciones nuevas y creativas para los desafíos de empresas, pymes y proyectos actuales. Cada experiencia refleja nuestro compromiso con la calidad, la creatividad y el propósito, guiados siempre por nuestros valores y visión propia.</p>
+            <img src="img/sillionvalley.jpg" alt="Cultura Silicon Valley" class="cultura-img">
+        </section>
+        <section id="experiencia" class="dynamic-section" style="display:none;">
+            <h2>Nuestra Experiencia</h2>
+            <p>Desde 2020, en SystemMaker hemos desarrollado proyectos tecnológicos que generan valor y aportan soluciones innovadoras a empresas, pymes y nuevos emprendimientos. Nuestra trayectoria nos permite comprender a fondo los desafíos actuales y ofrecer respuestas creativas, eficientes y adaptadas a cada necesidad.</p>
+            <img src="img/Experiencia.jpg" alt="Nuestra Experiencia" class="cultura-img">
+        </section>
+        <section id="expertise" class="dynamic-section" style="display:none;">
+            <h2>Nuestra Expertise</h2>
+            <p>El equipo de SystemMaker está formado por profesionales expertos en distintas áreas de la informática, incluyendo inteligencia artificial, desarrollo web, seguridad, DevOps, gestión de proyectos y arquitectura de software. Nuestra diversidad de conocimientos nos permite abordar proyectos complejos y multidisciplinarios, garantizando soluciones integrales y eficientes.</p>
+            <img src="img/Expertise.jpg" alt="Nuestra Expertise" class="cultura-img">
+        </section>
+        <section id="profesiones" class="dynamic-section" style="display:none;">
+            <h2>Nuestras Profesiones del Equipo</h2>
+            <p>Contamos con ingenieros informáticos, desarrolladores, arquitectos de software, analistas de datos, especialistas en programación, expertos full stack, analistas programadores y profesionales en distintas ramas tecnológicas, todos comprometidos con la excelencia y la innovación.</p>
+            <img src="img/Profesiones.jpg" alt="Nuestras Profesiones del Equipo" class="cultura-img">
+        </section>
+        <section id="contacto" class="dynamic-section" style="display:none;">
+            <h2>Contactos</h2>
+            <p>Puedes contactarnos para consultas, colaboraciones o nuevos proyectos a través de los siguientes enlaces:</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+                <a href="https://www.instagram.com/systemmakerspa/" target="_blank" style="color:#fff; display: flex; align-items: center; gap: 10px; font-size: 1.1rem;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width: 28px; filter: brightness(0) invert(1);">Instagram
+                </a>
+                <a href="https://systemmakerspa.com/" target="_blank" style="color:#fff; display: flex; align-items: center; gap: 10px; font-size: 1.1rem;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/internetarchive.svg" alt="Web" style="width: 28px; filter: brightness(0) invert(1);">Página Web
+                </a>
+                <a href="mailto:contacto@systemmakerspa.com" style="color:#fff; display: flex; align-items: center; gap: 10px; font-size: 1.1rem;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="Correo" style="width: 28px; filter: brightness(0) invert(1);">contacto@systemmakerspa.com
+                </a>
+                <a href="https://github.com/SystemMakerSpA" target="_blank" style="color:#fff; display: flex; align-items: center; gap: 10px; font-size: 1.1rem;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" style="width: 28px; filter: brightness(0) invert(1);">GitHub
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61586985512424" target="_blank" style="color:#fff; display: flex; align-items: center; gap: 10px; font-size: 1.1rem;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width: 28px; filter: brightness(0) invert(1);">Facebook
+                </a>
+                <!-- Puedes agregar tu link de WhatsApp aquí si lo deseas -->
+            </div>
+        </section>
+    </main>
+    <!-- Sección dinámica reemplaza la anterior -->
     <footer>
         <p>&copy; 2026 Blog SystemMaker SpA</p>
     </footer>

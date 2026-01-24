@@ -1,14 +1,57 @@
+.nav-btn {
+    /* ...existing styles... */
+}
+
+@media (max-width: 600px) {
+    .nav-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0.2rem 0.1rem;
+        border-radius: 5px;
+        min-width: 110px;
+        max-width: 95vw;
+        box-sizing: border-box;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.2rem;
+    }
+}
+/* Botones de navegación */
+.nav-btn {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    margin: 0 0.3rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 500;
+    outline: none;
+}
+.nav-btn.active {
+    background: #fff;
+    color: #111;
+}
+.nav-btn:hover:not(.active) {
+    background: #666;
+}
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     background: #111;
     color: #fff;
 }
-header {
     background: #111;
     color: #fff;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
     text-align: center;
+    border-bottom: 1px solid #222;
+}
 }
 .equipo {
     padding: 2rem 1rem;
@@ -44,20 +87,28 @@ header {
     margin-bottom: 1rem;
     border: 3px solid #222;
 }
-.cultura {
+.cultura,
+.dynamic-section {
     padding: 2rem 1rem;
     text-align: center;
     background: #111;
     margin: 2rem auto;
-    max-width: 900px;
+    max-width: 700px;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .cultura-img {
     width: 350px;
-    max-width: 100%;
-    margin-top: 1rem;
+    max-width: 90vw;
+    margin-top: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 footer {
     background: #111;
