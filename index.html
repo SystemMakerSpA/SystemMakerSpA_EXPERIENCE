@@ -8,6 +8,9 @@
 </head>
 <body>
 
+    <!-- ===== STICKY HEADER (Top Bar + Tabs) ===== -->
+    <div class="sticky-header">
+
     <!-- ===== TOP BAR (GitHub-style) ===== -->
     <div class="topbar-wrapper">
         <header class="topbar">
@@ -25,7 +28,7 @@
 
     <!-- ===== TAB NAVIGATION ===== -->
     <div class="tab-nav-wrapper">
-    <nav class="tab-nav" id="tabNav">
+    <nav class="tab-nav" id="tabNav"> 
         <button class="tab-btn active" onclick="showSection('readme')">
             <span class="tab-icon">📄</span> README
         </button>
@@ -51,6 +54,17 @@
         </button>
     </nav>
     </div>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-bar-wrapper">
+        <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progressFill"></div>
+            <div class="progress-dots" id="progressDots"></div>
+        </div>
+        <div class="progress-label" id="progressLabel">1 / 7</div>
+    </div>
+
+    </div><!-- /.sticky-header -->
 
     <!-- ===== README (Hero) ===== -->
     <div class="hero-section">

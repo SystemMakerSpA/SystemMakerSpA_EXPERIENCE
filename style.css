@@ -48,13 +48,19 @@ a:hover {
     text-decoration: underline;
 }
 
+/* ===== Sticky Header Container ===== */
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
 /* ===== Top Bar ===== */
 .topbar-wrapper {
     background: var(--bg-default);
     border-bottom: 1px solid var(--border-default);
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .topbar {
@@ -112,10 +118,119 @@ a:hover {
 /* ===== Tab Navigation ===== */
 .tab-nav-wrapper {
     background: var(--bg-default);
+    border-bottom: none;
+}
+
+/* ===== Section Progress Bar ===== */
+.progress-bar-wrapper {
+    background: var(--bg-default);
     border-bottom: 1px solid var(--border-default);
-    position: sticky;
-    top: 49px;
-    z-index: 99;
+    padding: 6px 1.5rem 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border-muted);
+    border-radius: 3px;
+    position: relative;
+    overflow: visible;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    width: 0%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 0 8px rgba(88, 166, 255, 0.4);
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    border: 2px solid var(--bg-default);
+    box-shadow: 0 0 6px rgba(88, 166, 255, 0.6);
+    transition: transform 0.2s ease;
+}
+
+.progress-dots {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-default);
+    border: 2px solid var(--bg-default);
+    transition: background 0.3s ease, transform 0.2s ease;
+    pointer-events: auto;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-dot.active {
+    background: var(--accent-blue);
+    transform: scale(1.3);
+}
+
+.progress-dot.visited {
+    background: var(--accent-purple);
+}
+
+.progress-dot:hover {
+    transform: scale(1.5);
+}
+
+.progress-dot::before {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    color: var(--fg-muted);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    background: var(--bg-subtle);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border-default);
+}
+
+.progress-dot:hover::before {
+    opacity: 1;
+}
+
+.progress-label {
+    font-size: 0.65rem;
+    color: var(--fg-muted);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    min-width: 32px;
+    text-align: right;
 }
 
 .tab-nav {
@@ -741,6 +856,23 @@ footer .footer-links a:hover {
     .topbar-title {
         font-size: 0.9rem;
     }
+    .progress-bar-wrapper {
+        padding: 5px 1rem 7px;
+    }
+    .progress-bar-track {
+        height: 5px;
+    }
+    .progress-bar-fill::after {
+        width: 10px;
+        height: 10px;
+    }
+    .progress-dot {
+        width: 7px;
+        height: 7px;
+    }
+    .progress-label {
+        font-size: 0.6rem;
+    }
     .hero-section,
     .content-area {
         padding-left: 0.75rem;
@@ -831,6 +963,26 @@ footer .footer-links a:hover {
     }
     .topbar-badge {
         display: none;
+    }
+    .progress-bar-wrapper {
+        padding: 4px 0.75rem 6px;
+        gap: 8px;
+    }
+    .progress-bar-track {
+        height: 4px;
+    }
+    .progress-bar-fill::after {
+        width: 8px;
+        height: 8px;
+        right: -3px;
+    }
+    .progress-dot {
+        width: 6px;
+        height: 6px;
+        border-width: 1.5px;
+    }
+    .progress-label {
+        font-size: 0.55rem;
     }
     .tab-nav {
         padding: 0 0.5rem;

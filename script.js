@@ -1,5 +1,44 @@
 // ===== SystemMaker EXPERIENCE — GitHub-Style Interactive Blog =====
 
+const sectionIds = ['readme', 'filosofia', 'experiencia', 'expertise', 'equipo', 'contacto', 'incubacion'];
+const sectionLabels = ['README', 'Filosofía', 'Experiencia', 'Expertise', 'Equipo', 'Contacto', 'Incubación'];
+let currentSectionIndex = 0;
+
+// --- Progress Bar ---
+function initProgressBar() {
+    const dotsContainer = document.getElementById('progressDots');
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    sectionIds.forEach((id, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'progress-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('data-label', sectionLabels[i]);
+        dot.addEventListener('click', () => showSection(id));
+        dotsContainer.appendChild(dot);
+    });
+    updateProgressBar(0);
+}
+
+function updateProgressBar(index) {
+    currentSectionIndex = index;
+    const total = sectionIds.length;
+    const fill = document.getElementById('progressFill');
+    const label = document.getElementById('progressLabel');
+    const dots = document.querySelectorAll('.progress-dot');
+
+    // Fill percentage
+    const pct = total > 1 ? (index / (total - 1)) * 100 : 0;
+    if (fill) fill.style.width = pct + '%';
+    if (label) label.textContent = (index + 1) + ' / ' + total;
+
+    // Update dots
+    dots.forEach((dot, i) => {
+        dot.classList.remove('active', 'visited');
+        if (i === index) dot.classList.add('active');
+        else if (i < index) dot.classList.add('visited');
+    });
+}
+
 // --- Section Navigation ---
 function showSection(sectionId) {
     // Hide all sections
@@ -34,6 +73,10 @@ function showSection(sectionId) {
 
     // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Update progress bar
+    const idx = sectionIds.indexOf(sectionId);
+    if (idx !== -1) updateProgressBar(idx);
 }
 
 // --- Animated Number Counter ---
@@ -159,11 +202,49 @@ function initBadgeEffects() {
     });
 }
 
+// --- Adjust body padding for fixed header ---
+function adjustBodyPadding() {
+    const header = document.querySelector('.sticky-header');
+    if (header) {
+        document.body.style.paddingTop = header.offsetHeight + 'px';
+    }
+}
+
 // --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
+    initProgressBar();
+    adjustBodyPadding();
     generateContribGraph();
     animateStats();
     initTeamCardEffects();
     initKeyboardNav();
     initBadgeEffects();
+    initSwipeNav();
 });
+
+window.addEventListener('resize', adjustBodyPadding);
+
+// --- Swipe Navigation (mobile) ---
+function initSwipeNav() {
+    let startX = 0;
+    let startY = 0;
+    const threshold = 60;
+
+    document.addEventListener('touchstart', (e) => {
+        startX = e.changedTouches[0].screenX;
+        startY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        const diffX = e.changedTouches[0].screenX - startX;
+        const diffY = e.changedTouches[0].screenY - startY;
+        // Only trigger if horizontal swipe is dominant
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
+            if (diffX < 0 && currentSectionIndex < sectionIds.length - 1) {
+                showSection(sectionIds[currentSectionIndex + 1]);
+            } else if (diffX > 0 && currentSectionIndex > 0) {
+                showSection(sectionIds[currentSectionIndex - 1]);
+            }
+        }
+    }, { passive: true });
+}
