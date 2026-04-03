@@ -197,7 +197,7 @@ body {
 
 .hero__center-logo {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Inter', sans-serif;
@@ -634,14 +634,15 @@ body {
   }
   .navbar__links.open { right: 0; }
   .navbar__links a { font-size: 1rem; }
-  .hero__left { bottom: 7rem; left: 1.5rem; right: 1.5rem; max-width: none; }
-  .hero__right { bottom: 3rem; right: 1.5rem; left: 1.5rem; text-align: center; }
-  .hero__subtitle { font-size: 0.7rem; letter-spacing: 3px; }
-  .hero__description { font-size: 0.95rem; }
-  .hero__stats { gap: 1.2rem; }
-  .hero__stat-number { font-size: 1.5rem; }
+  .hero__left { bottom: 1.5rem; left: 1.5rem; right: 1.5rem; max-width: none; }
+  .hero__right { display: none; }
+  .hero__subtitle { font-size: 0.65rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
+  .hero__description { font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; }
+  .hero__stats { gap: 1rem; }
+  .hero__stat-number { font-size: 1.3rem; }
+  .hero__stat-label { font-size: 0.6rem; letter-spacing: 1px; }
   .hero__btn { padding: 0.8rem 2rem; font-size: 0.8rem; width: 100%; text-align: center; }
-  .hero__center-logo { font-size: clamp(1.5rem, 10vw, 2.5rem); border-bottom-width: 1px; }
+  .hero__center-logo { top: 28%; font-size: clamp(1.3rem, 8vw, 2.2rem); border-bottom-width: 1px; letter-spacing: 0.08em; }
   .hero__scroll { display: none; }
   .section { padding: 5rem 0; }
   .section__container, .footer__container { padding: 0 1.5rem; }
@@ -658,8 +659,13 @@ body {
 @media (max-width: 400px) {
   .navbar { padding: 0.8rem 1rem; }
   .navbar__logo img { height: 34px; }
-  .hero__left { left: 1rem; right: 1rem; bottom: 6rem; }
-  .hero__right { left: 1rem; right: 1rem; bottom: 2.5rem; }
+  .hero__left { left: 1rem; right: 1rem; bottom: 1rem; }
+  .hero__right { display: none; }
+  .hero__center-logo { top: 25%; font-size: clamp(1.1rem, 7vw, 1.8rem); }
+  .hero__subtitle { font-size: 0.6rem; }
+  .hero__description { font-size: 0.8rem; }
+  .hero__stat-number { font-size: 1.1rem; }
+  .hero__stat-label { font-size: 0.55rem; }
   .section { padding: 3.5rem 0; }
   .section__container, .footer__container { padding: 0 1rem; }
   .section__title { font-size: 1.5rem; }
