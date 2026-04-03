@@ -1,442 +1,302 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SystemMaker SpA — EXPERIENCE</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SystemMaker SpA — EXPERIENCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cyberpunk scanline overlay -->
-    <div class="scanline-overlay"></div>
-
-    <!-- ===== STICKY HEADER (Top Bar + Tabs) ===== -->
-    <div class="sticky-header">
-
-    <!-- ===== TOP BAR (GitHub-style) ===== -->
-    <div class="topbar-wrapper">
-        <header class="topbar">
-            <div class="topbar-left">
-                <img src="img/logo.png" alt="Logo" class="topbar-logo">
-                <div class="topbar-title">
-                    <span>SystemMakerSpA</span>
-                    <span class="slash">/</span>
-                    <span class="repo-name">EXPERIENCE</span>
-                </div>
-            </div>
-            <span class="topbar-badge">public</span>
-        </header>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__logo">
+      <img src="img/logo.png" alt="SystemMaker Logo">
     </div>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#filosofia">Filosofía</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#incubacion">Incubación</a></li>
+    </ul>
+    <button class="navbar__burger" id="burger" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-    <!-- ===== TAB NAVIGATION ===== -->
-    <div class="tab-nav-wrapper">
-    <nav class="tab-nav" id="tabNav"> 
-        <button class="tab-btn active" onclick="showSection('readme')">
-            <span class="tab-icon">📄</span> README
-        </button>
-        <button class="tab-btn" onclick="showSection('filosofia')">
-            <span class="tab-icon">💡</span> Filosofía
-        </button>
-        <button class="tab-btn" onclick="showSection('experiencia')">
-            <span class="tab-icon">📊</span> Experiencia
-            <span class="tab-counter">5+</span>
-        </button>
-        <button class="tab-btn" onclick="showSection('expertise')">
-            <span class="tab-icon">🧠</span> Expertise
-        </button>
-        <button class="tab-btn" onclick="showSection('equipo')">
-            <span class="tab-icon">👥</span> Equipo
-            <span class="tab-counter">6</span>
-        </button>
-        <button class="tab-btn" onclick="showSection('contacto')">
-            <span class="tab-icon">🔗</span> Contacto
-        </button>
-        <button class="tab-btn" onclick="showSection('incubacion')">
-            <span class="tab-icon">🚀</span> Incubación
-        </button>
-    </nav>
-    </div>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
 
-    <!-- ===== PROGRESS BAR ===== -->
-    <div class="progress-bar-wrapper">
-        <div class="progress-bar-track">
-            <div class="progress-bar-fill" id="progressFill"></div>
-            <div class="progress-dots" id="progressDots"></div>
+    <div class="hero__left">
+      <p class="hero__subtitle">SYSTEMMAKER SpA</p>
+      <p class="hero__description">
+        En este espacio compartimos la esencia de nuestra filosofía, los principios que guían nuestro trabajo y las experiencias que nos han permitido crecer como equipo.
+      </p>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-target="5">0</span>
+          <span class="hero__stat-label">Años</span>
         </div>
-        <div class="progress-label" id="progressLabel">1 / 7</div>
-    </div>
-
-    </div><!-- /.sticky-header -->
-
-    <!-- ===== README (Hero) ===== -->
-    <div class="hero-section">
-        <div id="readme" class="dynamic-section visible">
-            <div class="readme-card">
-                <div class="readme-header">
-                    <span class="file-icon">📘</span> README.md
-                </div>
-                <div class="readme-body">
-                    <h1>Bienvenido al Blog de SystemMaker 👋</h1>
-                    <p>En este espacio compartimos la esencia de nuestra filosofía, los principios que guían nuestro trabajo y las experiencias que nos han permitido crecer como equipo. Aquí no hablamos de personas, sino de ideas, aprendizajes y valores que forman la base de SystemMaker.</p>
-                    <br>
-                    <p>Creemos en la innovación, la colaboración y la mejora continua como motores fundamentales para crear soluciones que marcan la diferencia. Este blog es un reflejo de nuestro compromiso con la excelencia, la creatividad y el impacto positivo en cada proyecto.</p>
-
-                    <div class="badge-row" style="margin-top: 1.5rem;">
-                        <span class="tech-badge"><span class="dot dot-green"></span> Activo desde 2020</span>
-                        <span class="tech-badge"><span class="dot dot-blue"></span> Santiago, Chile</span>
-                        <span class="tech-badge"><span class="dot dot-purple"></span> Open to collaborate</span>
-                        <span class="tech-badge"><span class="dot dot-orange"></span> Innovación constante</span>
-                    </div>
-
-                    <!-- Stats -->
-                    <div class="stats-row" style="margin-top: 2rem;">
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="5">0</span>
-                            <span class="stat-label">Años</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="30">0</span>
-                            <span class="stat-label">Proyectos</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="15">0</span>
-                            <span class="stat-label">Miembros</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="10">0</span>
-                            <span class="stat-label">Tecnologías</span>
-                        </div>
-                    </div>
-
-                    <!-- Contribution Graph -->
-                    <div class="contrib-section">
-                        <div class="contrib-label">Actividad del equipo en el último año</div>
-                        <div class="contrib-grid" id="contribGrid"></div>
-                        <div class="contrib-legend">
-                            <div class="contrib-cell"></div>
-                            <div class="contrib-cell level-1"></div>
-                            <div class="contrib-cell level-2"></div>
-                            <div class="contrib-cell level-3"></div>
-                            <div class="contrib-cell level-4"></div>
-                            Más
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-target="30">0</span>
+          <span class="hero__stat-label">Proyectos</span>
         </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-target="15">0</span>
+          <span class="hero__stat-label">Miembros</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-target="10">0</span>
+          <span class="hero__stat-label">Tecnologías</span>
+        </div>
+      </div>
     </div>
 
-    <!-- ===== DYNAMIC SECTIONS ===== -->
-    <main class="content-area">
+    <div class="hero__right">
+      <a href="#filosofia" class="hero__btn">Descubre más</a>
+    </div>
 
-        <!-- FILOSOFÍA -->
-        <section id="filosofia" class="dynamic-section">
-            <div class="section-card">
-                <div class="section-card-header">
-                    <span class="header-icon">💡</span> filosofia.md
-                </div>
-                <div class="section-card-body">
-                    <h2>Nuestra Filosofía</h2>
-                    <p>En SystemMaker, cultivamos una cultura de innovación, colaboración y mejora continua. Nos apasiona trabajar en proyectos, y es esa pasión la que impulsa a nuestra empresa a proponer soluciones nuevas y creativas para los desafíos de empresas, pymes y proyectos actuales.</p>
-                    <p>Cada experiencia refleja nuestro compromiso con la calidad, la creatividad y el propósito, guiados siempre por nuestros valores y visión propia.</p>
+    <div class="hero__center-logo">SYSTEMMAKER</div>
 
-                    <div class="code-block">
-                        <span class="comment">// SystemMakerValores.java</span><br>
-                        <span class="keyword">public class</span> <span class="func">SystemMakerValores</span> {<br><br>
-                        &nbsp;&nbsp;<span class="keyword">private static final</span> <span class="func">String</span> INNOVACION = <span class="string">"Siempre buscamos nuevas formas"</span>;<br>
-                        &nbsp;&nbsp;<span class="keyword">private static final</span> <span class="func">String</span> COLABORACION = <span class="string">"Juntos somos más fuertes"</span>;<br>
-                        &nbsp;&nbsp;<span class="keyword">private static final</span> <span class="func">String</span> MEJORA_CONTINUA = <span class="string">"Cada día un poco mejor"</span>;<br>
-                        &nbsp;&nbsp;<span class="keyword">private static final</span> <span class="func">boolean</span> CALIDAD = <span class="value">true</span>;<br>
-                        &nbsp;&nbsp;<span class="keyword">private static final</span> <span class="func">double</span> PASION = <span class="value">Double.POSITIVE_INFINITY</span>;<br><br>
-                        &nbsp;&nbsp;<span class="keyword">public static void</span> <span class="func">main</span>(<span class="func">String</span>[] args) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"SystemMaker SpA — Valores cargados ✓"</span>);<br>
-                        &nbsp;&nbsp;}<br>
-                        }</div>
+    <div class="hero__scroll">
+      scroll
+      <span></span>
+    </div>
+  </section>
 
-                    <img src="img/sillionvalley.jpg" alt="Cultura Silicon Valley" class="section-img">
-                </div>
-            </div>
-        </section>
+  <!-- FILOSOFÍA -->
+  <section class="section" id="filosofia">
+    <div class="section__container">
+      <span class="section__tag">01</span>
+      <h2 class="section__title">Nuestra Filosofía</h2>
+      <div class="section__divider"></div>
+      <div class="section__content">
+        <p>En SystemMaker, cultivamos una cultura de innovación, colaboración y mejora continua. Nos apasiona trabajar en proyectos, y es esa pasión la que impulsa a nuestra empresa a proponer soluciones nuevas y creativas para los desafíos de empresas, pymes y proyectos actuales.</p>
+        <p>Cada experiencia refleja nuestro compromiso con la calidad, la creatividad y el propósito, guiados siempre por nuestros valores y visión propia.</p>
+      </div>
+      <div class="values__grid">
+        <div class="value-item">
+          <h3>Innovación</h3>
+          <p>Siempre buscamos nuevas formas de resolver problemas y crear soluciones que marquen la diferencia.</p>
+        </div>
+        <div class="value-item">
+          <h3>Colaboración</h3>
+          <p>Juntos somos más fuertes. Trabajamos en equipo para potenciar cada idea y cada proyecto.</p>
+        </div>
+        <div class="value-item">
+          <h3>Mejora Continua</h3>
+          <p>Cada día un poco mejor. La excelencia es un camino, no un destino.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- EXPERIENCIA -->
-        <section id="experiencia" class="dynamic-section">
-            <div class="section-card">
-                <div class="section-card-header">
-                    <span class="header-icon">📊</span> experiencia.md
-                </div>
-                <div class="section-card-body">
-                    <h2>Nuestra Experiencia</h2>
-                    <p>Desde 2020, en SystemMaker hemos desarrollado proyectos tecnológicos que generan valor y aportan soluciones innovadoras a empresas, pymes y nuevos emprendimientos. Nuestra trayectoria nos permite comprender a fondo los desafíos actuales y ofrecer respuestas creativas, eficientes y adaptadas a cada necesidad.</p>
+  <!-- EXPERIENCIA -->
+  <section class="section section--alt" id="experiencia">
+    <div class="section__container">
+      <span class="section__tag">02</span>
+      <h2 class="section__title">Nuestra Experiencia</h2>
+      <div class="section__divider"></div>
+      <div class="section__content">
+        <p>Desde 2020, en SystemMaker hemos desarrollado proyectos tecnológicos que generan valor y aportan soluciones innovadoras a empresas, pymes y nuevos emprendimientos.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__year">2020</div>
+          <div class="timeline__text">Fundación de SystemMaker SpA. Primeros proyectos de desarrollo web y consultoría tecnológica.</div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__year">2021</div>
+          <div class="timeline__text">Expansión del equipo. Incorporación de IA y automatización en nuestros servicios.</div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__year">2022</div>
+          <div class="timeline__text">Proyectos de mayor escala con empresas y pymes. Desarrollo de soluciones a medida.</div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__year">2023</div>
+          <div class="timeline__text">Consolidación como equipo multidisciplinario. Inicio del programa de incubación.</div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__year">2024 — 2026</div>
+          <div class="timeline__text">Innovación continua, nuevos partnerships y crecimiento sostenido del equipo y proyectos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-year">2020</div>
-                            <div class="timeline-text">Fundación de SystemMaker SpA. Primeros proyectos de desarrollo web y consultoría tecnológica.</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2021</div>
-                            <div class="timeline-text">Expansión del equipo. Incorporación de IA y automatización en nuestros servicios.</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2022</div>
-                            <div class="timeline-text">Proyectos de mayor escala con empresas y pymes. Desarrollo de soluciones a medida.</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2023</div>
-                            <div class="timeline-text">Consolidación como equipo multidisciplinario. Inicio del programa de incubación.</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2024 — 2026</div>
-                            <div class="timeline-text">Innovación continua, nuevos partnerships y crecimiento sostenido del equipo y proyectos.</div>
-                        </div>
-                    </div>
+  <!-- EXPERTISE -->
+  <section class="section" id="expertise">
+    <div class="section__container">
+      <span class="section__tag">03</span>
+      <h2 class="section__title">Nuestra Expertise</h2>
+      <div class="section__divider"></div>
+      <div class="section__content">
+        <p>El equipo de SystemMaker está formado por profesionales expertos en distintas áreas de la informática, incluyendo inteligencia artificial, desarrollo web, seguridad, DevOps, gestión de proyectos y arquitectura de software.</p>
+      </div>
+      <div class="works__grid">
+        <div class="work-item">
+          <span class="work-item__number">01</span>
+          <h3>Frontend & Backend</h3>
+          <p>React, JavaScript, Node.js, Python — desarrollo integral de aplicaciones web modernas y escalables.</p>
+        </div>
+        <div class="work-item">
+          <span class="work-item__number">02</span>
+          <h3>AI & Machine Learning</h3>
+          <p>Modelos predictivos, automatización inteligente y análisis de datos para la toma de decisiones.</p>
+        </div>
+        <div class="work-item">
+          <span class="work-item__number">03</span>
+          <h3>Cybersecurity</h3>
+          <p>Protección de sistemas, auditoría de seguridad, ethical hacking y hardening de infraestructura.</p>
+        </div>
+        <div class="work-item">
+          <span class="work-item__number">04</span>
+          <h3>DevOps & Cloud</h3>
+          <p>Docker, Kubernetes, CI/CD, AWS/GCP — infraestructura moderna y despliegue continuo.</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Node.js</span>
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">AI / ML</span>
+        <span class="tech-badge">Cybersecurity</span>
+        <span class="tech-badge">DevOps</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">PostgreSQL</span>
+        <span class="tech-badge">Cloud (AWS/GCP)</span>
+        <span class="tech-badge">Git & GitHub</span>
+        <span class="tech-badge">Linux</span>
+      </div>
+    </div>
+  </section>
 
-                    <img src="img/lll.png" alt="Nuestra Experiencia" class="section-img">
-                </div>
-            </div>
-        </section>
+  <!-- EQUIPO -->
+  <section class="section section--alt" id="equipo">
+    <div class="section__container">
+      <span class="section__tag">04</span>
+      <h2 class="section__title">Nuestro Equipo</h2>
+      <div class="section__divider"></div>
+      <div class="section__content">
+        <p>Contamos con ingenieros informáticos, desarrolladores, arquitectos de software, analistas de datos, especialistas en programación, expertos full stack, analistas programadores y profesionales en distintas ramas tecnológicas.</p>
+      </div>
+      <div class="team__grid">
+        <div class="team-card">
+          <span class="team-card__initials">IC</span>
+          <h3>Ingeniero/a en Computación</h3>
+          <p>Diseño y desarrollo de sistemas complejos, arquitectura de software y soluciones escalables.</p>
+          <span class="team-card__tag">Full Stack · Arquitectura</span>
+        </div>
+        <div class="team-card">
+          <span class="team-card__initials">DS</span>
+          <h3>Data Scientist</h3>
+          <p>Análisis de datos, machine learning y modelos predictivos para la toma de decisiones.</p>
+          <span class="team-card__tag">Python / ML · Analytics</span>
+        </div>
+        <div class="team-card">
+          <span class="team-card__initials">FS</span>
+          <h3>Full Stack Developer</h3>
+          <p>Desarrollo integral de aplicaciones web, desde el frontend interactivo hasta APIs robustas.</p>
+          <span class="team-card__tag">JavaScript · React / Node</span>
+        </div>
+        <div class="team-card">
+          <span class="team-card__initials">CS</span>
+          <h3>Cybersecurity Specialist</h3>
+          <p>Protección de sistemas, auditoría de seguridad, ethical hacking y hardening de infraestructura.</p>
+          <span class="team-card__tag">Security · Pentesting</span>
+        </div>
+        <div class="team-card">
+          <span class="team-card__initials">AP</span>
+          <h3>Analista Programador</h3>
+          <p>Análisis de requerimientos, diseño de soluciones y desarrollo de software a medida.</p>
+          <span class="team-card__tag">Backend · Diseño lógico</span>
+        </div>
+        <div class="team-card">
+          <span class="team-card__initials">DO</span>
+          <h3>DevOps Engineer</h3>
+          <p>Automatización, CI/CD, contenedores y despliegue continuo en entornos cloud.</p>
+          <span class="team-card__tag">Docker / K8s · Cloud Infra</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- EXPERTISE -->
-        <section id="expertise" class="dynamic-section">
-            <div class="section-card">
-                <div class="section-card-header">
-                    <span class="header-icon">🧠</span> expertise.md
-                </div>
-                <div class="section-card-body">
-                    <h2>Nuestra Expertise</h2>
-                    <p>El equipo de SystemMaker está formado por profesionales expertos en distintas áreas de la informática, incluyendo inteligencia artificial, desarrollo web, seguridad, DevOps, gestión de proyectos y arquitectura de software. Nuestra diversidad de conocimientos nos permite abordar proyectos complejos y multidisciplinarios.</p>
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="section__container">
+      <span class="section__tag">05</span>
+      <h2 class="section__title">Contacto</h2>
+      <div class="section__divider"></div>
+      <div class="section__content">
+        <p>Síguenos y conoce nuestra experiencia:</p>
+      </div>
+      <div class="contact__grid">
+        <a href="https://systemmakerspa.github.io/SystemMakerSpA_EXPERIENCE/" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link__label">Nuestra Comunidad</span>
+          <span class="contact-link__sub">EXPERIENCE Blog</span>
+        </a>
+        <a href="https://web.facebook.com/profile.php?id=61586985512424" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link__label">Facebook</span>
+          <span class="contact-link__sub">SystemMaker SpA</span>
+        </a>
+        <a href="https://github.com/SystemMakerSpA" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link__label">GitHub</span>
+          <span class="contact-link__sub">SystemMakerSpA</span>
+        </a>
+        <a href="https://www.instagram.com/systemmakerspa/" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link__label">Instagram</span>
+          <span class="contact-link__sub">@systemmakerspa</span>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=56926195345&text=%C2%A1Hola!%20Reci%C3%A9n%20explor%C3%A9%20la%20web%20de%20SYSTEMMAKER%20y%20me%20llam%C3%B3%20mucho%20la%20atenci%C3%B3n%20la%20forma%20en%20que%20dise%C3%B1an%20soluciones%20digitales%20a%20medida.%20Me%20gustar%C3%ADa%20conversar%20con%20al%20detalle%20c%C3%B3mo%20podr%C3%ADan%20ayudarnos%20a%20optimizar%20procesos%2C%20automatizar%20tareas%20y%20acompa%C3%B1arnos%20en%20cada%20etapa%20del%20proyecto.%20%C2%BFPodemos%20coordinar%20una%20reuni%C3%B3n%20o%20llamada%20para%20revisar%20opciones%20y%20cotizaciones%3F%20Muchas%20gracias." target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link__label">WhatsApp</span>
+          <span class="contact-link__sub">+56 9 2619 5345</span>
+        </a>
+        <a href="mailto:contacto@systemmakerspa.com" class="contact-link">
+          <span class="contact-link__label">Email</span>
+          <span class="contact-link__sub">contacto@systemmakerspa.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-                    <div class="badge-row" style="margin-top: 1.5rem;">
-                        <span class="tech-badge"><span class="dot dot-blue"></span> Python</span>
-                        <span class="tech-badge"><span class="dot dot-orange"></span> JavaScript</span>
-                        <span class="tech-badge"><span class="dot dot-green"></span> Node.js</span>
-                        <span class="tech-badge"><span class="dot dot-blue"></span> React</span>
-                        <span class="tech-badge"><span class="dot dot-purple"></span> AI / ML</span>
-                        <span class="tech-badge"><span class="dot dot-red"></span> Cybersecurity</span>
-                        <span class="tech-badge"><span class="dot dot-orange"></span> DevOps</span>
-                        <span class="tech-badge"><span class="dot dot-green"></span> Docker</span>
-                        <span class="tech-badge"><span class="dot dot-blue"></span> PostgreSQL</span>
-                        <span class="tech-badge"><span class="dot dot-purple"></span> Cloud (AWS/GCP)</span>
-                        <span class="tech-badge"><span class="dot dot-white"></span> Git & GitHub</span>
-                        <span class="tech-badge"><span class="dot dot-red"></span> Linux</span>
-                    </div>
+  <!-- INCUBACIÓN -->
+  <section class="section section--alt" id="incubacion">
+    <div class="section__container">
+      <span class="section__tag">06</span>
+      <h2 class="section__title">Programa de Incubación</h2>
+      <div class="section__divider"></div>
+      <div class="section__content">
+        <p><strong>¿Eres estudiante o buscas experiencia profesional?</strong></p>
+        <p>En SystemMaker no solo creemos en el talento joven: también contamos con una sólida red de empresas, instituciones y personas clave capaces de potenciar tus ideas, tu mentalidad y tus proyectos hasta llevarlos a su máximo nivel de conocimiento…</p>
+        <p>…o empujarte a una gloriosa autodestrucción en el intento. 😂🤣</p>
+        <p>Si eres estudiante o buscas tu primera experiencia en tecnología, este espacio es para ti. Aceptamos personas con ganas de aprender y crecer, ofreciéndoles la oportunidad de incubarse en nuestra empresa, participar en proyectos reales y desarrollar habilidades clave para su futuro profesional.</p>
+        <p>¿Listo para el reto? En SystemMaker, el límite lo pones tú (o la realidad, pero eso lo descubrimos juntos). 😅</p>
+      </div>
+    </div>
+  </section>
 
-                    <div class="code-block" style="margin-top: 1.5rem;">
-                        <span class="comment">// TechStack.java — Nuestro stack tecnológico</span><br><br>
-                        <span class="keyword">import</span> java.util.<span class="func">Map</span>;<br>
-                        <span class="keyword">import</span> java.util.<span class="func">List</span>;<br><br>
-                        <span class="keyword">public class</span> <span class="func">TechStack</span> {<br><br>
-                        &nbsp;&nbsp;<span class="comment">// What "Full Stack" Actually Means:</span><br>
-                        &nbsp;&nbsp;<span class="keyword">static final</span> <span class="func">String</span>[] FULL_STACK = {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Frontend"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Backend / APIs"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Database"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Servers"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Networking"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Cloud Infrastructure"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"CI / CD Pipelines"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Security"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Containers"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"CDN"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Monitoring & Logging"</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Backups & Recovery"</span><br>
-                        &nbsp;&nbsp;};<br><br>
-                        &nbsp;&nbsp;<span class="keyword">public static void</span> <span class="func">main</span>(<span class="func">String</span>[] args) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"Stack cargado ✓ — Security: "</span> + SECURITY);<br>
-                        &nbsp;&nbsp;}<br>
-                        }</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__brand">SYSTEMMAKER</p>
+      <p class="footer__tagline">Innovación · Colaboración · Experiencia</p>
+      <div class="footer__divider"></div>
+      <p class="footer__copy">Todos los derechos reservados por SystemMaker SpA &copy; 2026</p>
+    </div>
+  </footer>
 
-                    <img src="img/Expertise.jpg" alt="Nuestra Expertise" class="section-img">
-                </div>
-            </div>
-        </section>
-
-        <!-- EQUIPO (Profesiones) -->
-        <section id="equipo" class="dynamic-section">
-            <div class="section-card">
-                <div class="section-card-header">
-                    <span class="header-icon">👥</span> equipo.md — Nuestras Profesiones
-                </div>
-                <div class="section-card-body">
-                    <h2>Nuestro Equipo</h2>
-                    <p>Contamos con ingenieros informáticos, desarrolladores, arquitectos de software, analistas de datos, especialistas en programación, expertos full stack, analistas programadores y profesionales en distintas ramas tecnológicas, todos comprometidos con la excelencia y la innovación.</p>
-
-                    <div class="team-grid">
-                        <div class="team-card">
-                            <div class="team-card-top">
-                                <div class="team-avatar">IC</div>
-                                <span class="team-card-name">Ingeniero/a en Computación</span>
-                            </div>
-                            <div class="team-card-desc">Diseño y desarrollo de sistemas complejos, arquitectura de software y soluciones escalables.</div>
-                            <div class="team-card-meta">
-                                <span><span class="lang-dot dot-blue"></span> Full Stack</span>
-                                <span>⭐ Arquitectura</span>
-                            </div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-card-top">
-                                <div class="team-avatar" style="background: rgba(188,140,255,0.15); color: var(--accent-purple);">DS</div>
-                                <span class="team-card-name">Data Scientist</span>
-                            </div>
-                            <div class="team-card-desc">Análisis de datos, machine learning y modelos predictivos para la toma de decisiones.</div>
-                            <div class="team-card-meta">
-                                <span><span class="lang-dot dot-purple"></span> Python / ML</span>
-                                <span>⭐ Analytics</span>
-                            </div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-card-top">
-                                <div class="team-avatar" style="background: rgba(240,136,62,0.15); color: var(--accent-orange);">FS</div>
-                                <span class="team-card-name">Full Stack Developer</span>
-                            </div>
-                            <div class="team-card-desc">Desarrollo integral de aplicaciones web, desde el frontend interactivo hasta APIs robustas.</div>
-                            <div class="team-card-meta">
-                                <span><span class="lang-dot dot-orange"></span> JavaScript</span>
-                                <span>⭐ React / Node</span>
-                            </div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-card-top">
-                                <div class="team-avatar" style="background: rgba(248,81,73,0.15); color: var(--accent-red);">CS</div>
-                                <span class="team-card-name">Cybersecurity Specialist</span>
-                            </div>
-                            <div class="team-card-desc">Protección de sistemas, auditoría de seguridad, ethical hacking y hardening de infraestructura.</div>
-                            <div class="team-card-meta">
-                                <span><span class="lang-dot dot-red"></span> Security</span>
-                                <span>⭐ Pentesting</span>
-                            </div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-card-top">
-                                <div class="team-avatar">AP</div>
-                                <span class="team-card-name">Analista Programador</span>
-                            </div>
-                            <div class="team-card-desc">Análisis de requerimientos, diseño de soluciones y desarrollo de software a medida.</div>
-                            <div class="team-card-meta">
-                                <span><span class="lang-dot dot-green"></span> Backend</span>
-                                <span>⭐ Diseño lógico</span>
-                            </div>
-                        </div>
-                        <div class="team-card">
-                            <div class="team-card-top">
-                                <div class="team-avatar" style="background: rgba(88,166,255,0.15); color: var(--accent-blue);">DO</div>
-                                <span class="team-card-name">DevOps Engineer</span>
-                            </div>
-                            <div class="team-card-desc">Automatización, CI/CD, contenedores y despliegue continuo en entornos cloud.</div>
-                            <div class="team-card-meta">
-                                <span><span class="lang-dot dot-blue"></span> Docker / K8s</span>
-                                <span>⭐ Cloud Infra</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <img src="img/3001.png" alt="Nuestro Equipo" class="section-img" style="margin-top: 1.5rem;">
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACTO -->
-        <section id="contacto" class="dynamic-section">
-            <div class="section-card">
-                <div class="section-card-header">
-                    <span class="header-icon">🔗</span> contacto.md
-                </div>
-                <div class="section-card-body">
-                    <h2>Contacto</h2>
-                    <p>Síguenos y conoce nuestra experiencia:</p>
-
-                    <div class="contact-grid">
-                        <a href="https://systemmakerspa.github.io/SystemMakerSpA_EXPERIENCE/" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
-                                <circle cx="12" cy="12" r="10" fill="#8b3fbf"/>
-                                <path d="M8 17v-1a4 4 0 0 1 8 0v1" stroke="#fff" stroke-width="2" fill="none"/>
-                                <circle cx="12" cy="10" r="3" fill="#fff"/>
-                            </svg>
-                            <div>
-                                <span class="contact-label">Nuestra Comunidad</span>
-                                <span class="contact-sub">EXPERIENCE Blog</span>
-                            </div>
-                        </a>
-                        <a href="https://web.facebook.com/profile.php?id=61586985512424" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2" style="flex-shrink:0;">
-                                <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
-                            </svg>
-                            <div>
-                                <span class="contact-label">Facebook</span>
-                                <span class="contact-sub">SystemMaker SpA</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/SystemMakerSpA" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#f0f6fc" style="flex-shrink:0;">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            <div>
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-sub">SystemMakerSpA</span>
-                            </div>
-                        </a>
-                        <a href="https://www.instagram.com/systemmakerspa/" target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#E4405F" style="flex-shrink:0;">
-                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.63c-.794.306-1.459.717-2.126 1.384S.957 3.93.65 4.717c-.297.788-.504 1.658-.556 2.927C.03 8.333.015 8.74 0 12s.015 3.667.072 4.947c.062 1.277.265 2.148.556 2.927.306.788.717 1.459 1.384 2.126.667.667 1.339 1.078 2.126 1.384.788.291 1.658.494 2.927.556 1.27.057 1.677.084 4.947.084s3.668-.015 4.947-.072c1.277-.062 2.148-.265 2.927-.556.788-.306 1.459-.717 2.126-1.384.667-.667 1.078-1.335 1.384-2.126.291-.779.515-1.63.553-2.927.057-1.27.084-1.677.084-4.947s-.015-3.667-.072-4.947c-.062-1.277-.265-2.148-.556-2.927-.306-.789-.717-1.459-1.384-2.126C21.319 1.347 20.651.935 19.864.63c-.788-.297-1.659-.499-2.927-.556C15.667.048 15.26.03 12 0zm0 2.16c3.203 0 3.585.009 4.849.070 1.171.054 1.805.244 2.227.408.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.354 1.057.408 2.227.061 1.264.07 1.646.07 4.849s-.009 3.585-.07 4.849c-.054 1.171-.244 1.805-.408 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.354-2.227.408-1.264.061-1.646.07-4.849.07s-3.585-.009-4.849-.07c-1.171-.054-1.805-.244-2.227-.408-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.354-1.057-.408-2.227-.061-1.264-.07-1.646-.07-4.849s.009-3.585.07-4.849c.054-1.171.244-1.805.408-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.354 2.227-.408 1.264-.061 1.646-.07 4.849-.07z"/>
-                                <circle cx="12" cy="12" r="3.846"/>
-                                <circle cx="18.461" cy="5.539" r=".923"/>
-                            </svg>
-                            <div>
-                                <span class="contact-label">Instagram</span>
-                                <span class="contact-sub">@systemmakerspa</span>
-                            </div>
-                        </a>
-                        <a href="https://api.whatsapp.com/send?phone=56926195345&text=%C2%A1Hola!%20Reci%C3%A9n%20explor%C3%A9%20la%20web%20de%20SYSTEMMAKER%20y%20me%20llam%C3%B3%20mucho%20la%20atenci%C3%B3n%20la%20forma%20en%20que%20dise%C3%B1an%20soluciones%20digitales%20a%20medida.%20Me%20gustar%C3%ADa%20conversar%20con%20al%20detalle%20c%C3%B3mo%20podr%C3%ADan%20ayudarnos%20a%20optimizar%20procesos%2C%20automatizar%20tareas%20y%20acompa%C3%B1arnos%20en%20cada%20etapa%20del%20proyecto.%20%C2%BFPodemos%20coordinar%20una%20reuni%C3%B3n%20o%20llamada%20para%20revisar%20opciones%20y%20cotizaciones%3F%20Muchas%20gracias." target="_blank" rel="noopener noreferrer" class="contact-link">
-                            <svg width="22" height="22" viewBox="0 0 32 32" fill="#25D366" style="flex-shrink:0;">
-                                <path d="M16 2.667c-7.333 0-13.333 5.999-13.333 13.333 0 2.353.629 4.641 1.826 6.658L2.667 29.333l6.915-1.777c1.944 1.063 4.148 1.62 6.418 1.62 7.334 0 13.333-6 13.333-13.333S23.333 2.667 16 2.667zm-.001 24.888c-2.03 0-4.021-.544-5.767-1.571l-.413-.245-4.113 1.057 1.097-4.012-.268-.413c-1.095-1.689-1.674-3.644-1.674-5.64 0-5.833 4.751-10.584 10.584-10.584s10.584 4.751 10.584 10.584-4.751 10.584-10.584 10.584zm5.825-7.893c-.318-.159-1.882-.927-2.174-1.032-.292-.106-.505-.159-.717.159-.212.318-.823 1.032-1.009 1.244-.186.212-.371.239-.689.08-.318-.159-1.341-.494-2.554-1.575-.944-.841-1.58-1.879-1.766-2.197-.186-.318-.02-.49.14-.649.143-.142.318-.371.477-.557.159-.186.212-.318.318-.53.106-.212.053-.397-.027-.557-.08-.159-.717-1.732-.981-2.373-.258-.619-.521-.534-.717-.544h-.612c-.212 0-.556.08-.847.398-.291.318-1.112 1.086-1.112 2.648 0 1.561 1.138 3.069 1.296 3.281.159.212 2.239 3.418 5.43 4.79.759.327 1.352.522 1.815.669.762.243 1.454.209 2.003.127.611-.091 1.882-.769 2.148-1.513.265-.745.265-1.383.185-1.513-.079-.132-.291-.212-.609-.371z"/>
-                            </svg>
-                            <div>
-                                <span class="contact-label">WhatsApp</span>
-                                <span class="contact-sub">+56 9 2619 5345</span>
-                            </div>
-                        </a>
-                        <a href="mailto:contacto@systemmakerspa.com" class="contact-link">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#EA4335" style="flex-shrink:0;">
-                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                            <div>
-                                <span class="contact-label">Email</span>
-                                <span class="contact-sub">contacto@systemmakerspa.com</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- INCUBACIÓN -->
-        <section id="incubacion" class="dynamic-section">
-            <div class="section-card">
-                <div class="section-card-header">
-                    <span class="header-icon">🚀</span> incubacion.md
-                </div>
-                <div class="section-card-body">
-                    <h2>Programa de Incubación</h2>
-
-                    <p><strong>¿Eres estudiante o buscas experiencia profesional?</strong></p>
-                    <p>En SystemMaker no solo creemos en el talento joven: también contamos con una sólida red de empresas, instituciones y personas clave capaces de potenciar tus ideas, tu mentalidad y tus proyectos hasta llevarlos a su máximo nivel de conocimiento…</p>
-                    <p>…o empujarte a una gloriosa autodestrucción en el intento. 😂🤣</p>
-                    <p>Si eres estudiante o buscas tu primera experiencia en tecnología, este espacio es para ti. Aceptamos personas con ganas de aprender y crecer, ofreciéndoles la oportunidad de incubarse en nuestra empresa, participar en proyectos reales y desarrollar habilidades clave para su futuro profesional.</p>
-                    <p>¿Listo para el reto? En SystemMaker, el límite lo pones tú (o la realidad, pero eso lo descubrimos juntos). 😅</p>
-
-                    <img src="img/incubados.jpg" alt="Incubación" class="section-img" style="margin-top: 1.5rem;">
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p><span class="cyber-flicker">&copy; 2026</span> SystemMaker SpA <span style="color: var(--neon-cyan);">// EXPERIENCE</span></p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
